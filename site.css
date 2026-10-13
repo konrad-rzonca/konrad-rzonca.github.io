@@ -9,7 +9,7 @@
   --bg-inset: color-mix(in srgb, var(--brand-wall) 95%, var(--brand-ink));
   --text-strong: var(--brand-ink);
   --text-soft: var(--brand-soft);
-  --text-muted: color-mix(in srgb, var(--brand-soft) 78%, var(--brand-wall));
+  --text-muted: var(--brand-soft);
   --border-soft: color-mix(in srgb, var(--brand-wall) 86%, var(--brand-ink));
   --border-strong: color-mix(in srgb, var(--brand-wall) 68%, var(--brand-ink));
   --accent: var(--brand-accent);
@@ -34,7 +34,8 @@ body {
   font: 16px/1.6 var(--font);
 }
 img { display: block; max-width: 100%; height: auto; }
-a { color: var(--accent); text-decoration: none; }
+/* The accent is 4.5:1 on the wall and less on a tinted panel, so a link is a step darker. */
+a { color: var(--accent-strong); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a code { color: inherit; }
 h1, h2, h3, h4 { color: var(--text-strong); line-height: 1.2; margin: 0 0 .5em; }
