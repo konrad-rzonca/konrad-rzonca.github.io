@@ -1,26 +1,28 @@
-/* One stylesheet for both sites. The palette is the Bake Window's dark-skin tokens. */
+/* One stylesheet for both sites. The colors and the title's face are the brand's: brand/brand.css
+   and brand/title.ttf, which sunforge-brand's build writes. */
+@font-face { font-family: "Brand Title"; src: url("brand/title.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
 :root {
-  --bg: #12161d;
-  --bg-header: #0d1117;
-  --bg-panel: #171d25;
-  --bg-card: #1d2430;
-  --bg-inset: #0b0f15;
-  --text-strong: #edf1f7;
-  --text-soft: #a9b4c4;
-  --text-muted: #6c7889;
-  --border-soft: #27303d;
-  --border-strong: #3c4859;
-  --accent: #3178e6;
-  --accent-strong: #5e9bff;
-  --accent-soft: #13294a;
+  --bg: var(--brand-wall);
+  --bg-header: color-mix(in srgb, var(--brand-wall) 60%, #fff);
+  --bg-panel: color-mix(in srgb, var(--brand-wall) 35%, #fff);
+  --bg-card: color-mix(in srgb, var(--brand-wall) 92%, var(--brand-ink));
+  --bg-inset: color-mix(in srgb, var(--brand-wall) 95%, var(--brand-ink));
+  --text-strong: var(--brand-ink);
+  --text-soft: var(--brand-soft);
+  --text-muted: color-mix(in srgb, var(--brand-soft) 78%, var(--brand-wall));
+  --border-soft: color-mix(in srgb, var(--brand-wall) 86%, var(--brand-ink));
+  --border-strong: color-mix(in srgb, var(--brand-wall) 68%, var(--brand-ink));
+  --accent: var(--brand-accent);
+  --accent-strong: color-mix(in srgb, var(--brand-accent) 82%, var(--brand-ink));
+  --accent-soft: color-mix(in srgb, var(--brand-wall) 82%, var(--brand-accent));
   --accent-on: #ffffff;
-  --data: #7cc4f8;
   --radius: 6px;
   --measure: 72ch;
   --page: 1120px;
   --font: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --title: "Brand Title", var(--font);
   --mono: "JetBrains Mono", "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -32,10 +34,11 @@ body {
   font: 16px/1.6 var(--font);
 }
 img { display: block; max-width: 100%; height: auto; }
-a { color: var(--accent-strong); text-decoration: none; }
+a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a code { color: inherit; }
 h1, h2, h3, h4 { color: var(--text-strong); line-height: 1.2; margin: 0 0 .5em; }
+h1, h2 { font-family: var(--title); font-weight: 800; }
 p { margin: 0 0 1em; }
 code {
   font: .88em var(--mono);
@@ -57,23 +60,16 @@ code {
 }
 .site-header .wrap { display: flex; align-items: center; gap: 24px; height: 60px; }
 .wordmark {
-  display: flex; align-items: center; gap: 9px;
-  color: var(--text-strong); font-weight: 700; font-size: 13px; letter-spacing: 3px;
+  display: flex; align-items: center; gap: 10px;
+  color: var(--text-strong); font: 800 21px/1 var(--title);
   white-space: nowrap;
 }
 .wordmark:hover { text-decoration: none; }
 .wordmark .second { color: var(--accent); }
-/* The Bake Window header's mark: a rotated frame around a core on the accent's soft field. */
-.mark {
-  width: 28px; height: 28px; border-radius: 6px; flex: none;
-  background: var(--accent-soft); border: 1px solid rgba(49, 120, 230, .42);
-  display: grid; place-items: center;
-}
-.mark::before {
-  content: ""; width: 15px; height: 15px; border: 2px solid var(--accent); border-radius: 3px;
-  transform: rotate(45deg);
-  background: linear-gradient(var(--accent-strong), var(--accent-strong)) center / 5px 5px no-repeat;
-}
+/* The logo on its wall, as the store's icon shows it. */
+.wordmark img { width: 36px; height: 36px; border-radius: 8px; flex: none; }
+/* The title face's capitals sit high in their line. */
+.wordmark > span { padding-top: .14em; }
 .nav { display: flex; align-items: center; gap: 20px; margin-left: auto; font-size: 15px; }
 .nav a { color: var(--text-soft); }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--text-strong); text-decoration: none; }
@@ -87,7 +83,7 @@ code {
 .button.primary { background: var(--accent); color: var(--accent-on); }
 .button.primary:hover { background: var(--accent-strong); }
 .button.secondary { border-color: var(--border-strong); color: var(--text-strong); }
-.button.secondary:hover { border-color: var(--accent-strong); }
+.button.secondary:hover { border-color: var(--accent); }
 .nav .button { height: 34px; padding: 0 14px; color: var(--accent-on); }
 
 /* Hero */
@@ -116,7 +112,7 @@ figure { margin: 0; }
 .feature.wide .copy { order: 0; max-width: var(--measure); }
 .feature h2 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -.01em; }
 .feature .eyebrow {
-  font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-strong);
+  font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent);
   margin-bottom: 10px;
 }
 .feature figure { border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden; background: var(--bg-inset); }
@@ -163,8 +159,9 @@ figure { margin: 0; }
 .prose strong { color: var(--text-strong); }
 
 /* Publisher page */
-.person { padding-block: 88px 40px; }
-.person h1 { font-size: clamp(36px, 5vw, 52px); letter-spacing: -.02em; }
+.person { padding-block: 72px 32px; }
+.person h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1; text-transform: uppercase; }
+.person h1 .second { display: block; color: var(--accent); }
 .person .lead { font-size: 19px; max-width: 56ch; }
 .products { display: grid; gap: 20px; padding-block: 16px 56px; }
 .product {
@@ -172,6 +169,7 @@ figure { margin: 0; }
   background: var(--bg-panel); border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden;
 }
 .product .body { padding: 24px 28px; }
+.product .slogan { font: 500 18px/1.3 var(--title); color: var(--text-strong); }
 .product h2 { font-size: 22px; }
 .product .links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
 .contact { padding-block: 0 72px; }
