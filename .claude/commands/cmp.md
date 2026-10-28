@@ -1,0 +1,1 @@
+Prepare for a compaction: check that the work so far builds and passes the checks it touches, and bring the plan's status and evidence up to date, so a session that resumes from the plan alone can continue.

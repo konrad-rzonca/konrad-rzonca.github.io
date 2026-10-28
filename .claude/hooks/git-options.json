@@ -1,0 +1,1351 @@
+{
+ "global": {
+  "-C": "separate",
+  "-c": "separate",
+  "--git-dir": "next",
+  "--work-tree": "next",
+  "--namespace": "next",
+  "--config-env": "next",
+  "--attr-source": "next",
+  "--exec-path": "attached",
+  "--list-cmds": "attached",
+  "--html-path": "none",
+  "--man-path": "none",
+  "--info-path": "none",
+  "-p": "none",
+  "--paginate": "none",
+  "-P": "none",
+  "--no-pager": "none",
+  "--no-replace-objects": "none",
+  "--no-lazy-fetch": "none",
+  "--no-optional-locks": "none",
+  "--no-advice": "none",
+  "--bare": "none",
+  "--literal-pathspecs": "none",
+  "--glob-pathspecs": "none",
+  "--noglob-pathspecs": "none",
+  "--icase-pathspecs": "none",
+  "-v": "exit",
+  "--version": "exit",
+  "-h": "exit",
+  "--help": "exit"
+ },
+ "commands": {
+  "stash push": {
+   "long": {
+    "keep-index": "none",
+    "no-keep-index": "none",
+    "staged": "none",
+    "no-staged": "none",
+    "patch": "none",
+    "no-patch": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "include-untracked": "none",
+    "no-include-untracked": "none",
+    "all": "none",
+    "no-all": "none",
+    "message": "next",
+    "no-message": "none",
+    "pathspec-from-file": "next",
+    "no-pathspec-from-file": "none",
+    "pathspec-file-nul": "none",
+    "no-pathspec-file-nul": "none"
+   },
+   "short": {
+    "k": {
+     "takes": "none",
+     "name": "keep-index"
+    },
+    "S": {
+     "takes": "none",
+     "name": "staged"
+    },
+    "p": {
+     "takes": "none",
+     "name": "patch"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "u": {
+     "takes": "none",
+     "name": "include-untracked"
+    },
+    "a": {
+     "takes": "none",
+     "name": "all"
+    },
+    "m": {
+     "takes": "next",
+     "name": "message"
+    }
+   }
+  },
+  "stash save": {
+   "long": {
+    "keep-index": "none",
+    "no-keep-index": "none",
+    "staged": "none",
+    "no-staged": "none",
+    "patch": "none",
+    "no-patch": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "include-untracked": "none",
+    "no-include-untracked": "none",
+    "all": "none",
+    "no-all": "none",
+    "message": "next",
+    "no-message": "none"
+   },
+   "short": {
+    "k": {
+     "takes": "none",
+     "name": "keep-index"
+    },
+    "S": {
+     "takes": "none",
+     "name": "staged"
+    },
+    "p": {
+     "takes": "none",
+     "name": "patch"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "u": {
+     "takes": "none",
+     "name": "include-untracked"
+    },
+    "a": {
+     "takes": "none",
+     "name": "all"
+    },
+    "m": {
+     "takes": "next",
+     "name": "message"
+    }
+   }
+  },
+  "stash pop": {
+   "long": {
+    "quiet": "none",
+    "no-quiet": "none",
+    "index": "none",
+    "no-index": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    }
+   }
+  },
+  "stash apply": {
+   "long": {
+    "quiet": "none",
+    "no-quiet": "none",
+    "index": "none",
+    "no-index": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    }
+   }
+  },
+  "stash drop": {
+   "long": {
+    "quiet": "none",
+    "no-quiet": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    }
+   }
+  },
+  "stash clear": {
+   "long": {},
+   "short": {}
+  },
+  "stash list": {
+   "long": {},
+   "short": {}
+  },
+  "stash show": {
+   "long": {
+    "include-untracked": "none",
+    "no-include-untracked": "none",
+    "only-untracked": "none"
+   },
+   "short": {
+    "u": {
+     "takes": "none",
+     "name": "include-untracked"
+    }
+   }
+  },
+  "stash create": {
+   "long": {},
+   "short": {}
+  },
+  "stash store": {
+   "long": {
+    "quiet": "none",
+    "no-quiet": "none",
+    "message": "next",
+    "no-message": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "m": {
+     "takes": "next",
+     "name": "message"
+    }
+   }
+  },
+  "stash branch": {
+   "long": {},
+   "short": {}
+  },
+  "reset": {
+   "long": {
+    "quiet": "none",
+    "no-quiet": "none",
+    "no-refresh": "none",
+    "refresh": "none",
+    "mixed": "none",
+    "soft": "none",
+    "hard": "none",
+    "merge": "none",
+    "keep": "none",
+    "recurse-submodules": "attached",
+    "no-recurse-submodules": "none",
+    "patch": "none",
+    "no-patch": "none",
+    "intent-to-add": "none",
+    "no-intent-to-add": "none",
+    "pathspec-from-file": "next",
+    "no-pathspec-from-file": "none",
+    "pathspec-file-nul": "none",
+    "no-pathspec-file-nul": "none",
+    "stdin": "none",
+    "no-stdin": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "p": {
+     "takes": "none",
+     "name": "patch"
+    },
+    "N": {
+     "takes": "none",
+     "name": "intent-to-add"
+    },
+    "z": {
+     "takes": "none",
+     "name": null
+    }
+   }
+  },
+  "clean": {
+   "long": {
+    "quiet": "none",
+    "no-quiet": "none",
+    "dry-run": "none",
+    "no-dry-run": "none",
+    "force": "none",
+    "no-force": "none",
+    "interactive": "none",
+    "no-interactive": "none",
+    "exclude": "next"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "n": {
+     "takes": "none",
+     "name": "dry-run"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "i": {
+     "takes": "none",
+     "name": "interactive"
+    },
+    "d": {
+     "takes": "none",
+     "name": null
+    },
+    "e": {
+     "takes": "next",
+     "name": "exclude"
+    },
+    "x": {
+     "takes": "none",
+     "name": null
+    },
+    "X": {
+     "takes": "none",
+     "name": null
+    }
+   }
+  },
+  "restore": {
+   "long": {
+    "source": "next",
+    "no-source": "none",
+    "staged": "none",
+    "no-staged": "none",
+    "worktree": "none",
+    "no-worktree": "none",
+    "ignore-unmerged": "none",
+    "no-ignore-unmerged": "none",
+    "overlay": "none",
+    "no-overlay": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "recurse-submodules": "attached",
+    "no-recurse-submodules": "none",
+    "progress": "none",
+    "no-progress": "none",
+    "merge": "none",
+    "no-merge": "none",
+    "conflict": "next",
+    "no-conflict": "none",
+    "ours": "none",
+    "theirs": "none",
+    "patch": "none",
+    "no-patch": "none",
+    "ignore-skip-worktree-bits": "none",
+    "no-ignore-skip-worktree-bits": "none",
+    "pathspec-from-file": "next",
+    "no-pathspec-from-file": "none",
+    "pathspec-file-nul": "none",
+    "no-pathspec-file-nul": "none"
+   },
+   "short": {
+    "2": {
+     "takes": "none",
+     "name": "ours"
+    },
+    "3": {
+     "takes": "none",
+     "name": "theirs"
+    },
+    "s": {
+     "takes": "next",
+     "name": "source"
+    },
+    "S": {
+     "takes": "none",
+     "name": "staged"
+    },
+    "W": {
+     "takes": "none",
+     "name": "worktree"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "m": {
+     "takes": "none",
+     "name": "merge"
+    },
+    "p": {
+     "takes": "none",
+     "name": "patch"
+    }
+   }
+  },
+  "checkout": {
+   "long": {
+    "guess": "none",
+    "no-guess": "none",
+    "overlay": "none",
+    "no-overlay": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "recurse-submodules": "attached",
+    "no-recurse-submodules": "none",
+    "progress": "none",
+    "no-progress": "none",
+    "merge": "none",
+    "no-merge": "none",
+    "conflict": "next",
+    "no-conflict": "none",
+    "detach": "none",
+    "no-detach": "none",
+    "track": "attached",
+    "no-track": "none",
+    "force": "none",
+    "no-force": "none",
+    "orphan": "next",
+    "no-orphan": "none",
+    "overwrite-ignore": "none",
+    "no-overwrite-ignore": "none",
+    "ignore-other-worktrees": "none",
+    "no-ignore-other-worktrees": "none",
+    "ours": "none",
+    "theirs": "none",
+    "patch": "none",
+    "no-patch": "none",
+    "ignore-skip-worktree-bits": "none",
+    "no-ignore-skip-worktree-bits": "none",
+    "pathspec-from-file": "next",
+    "no-pathspec-from-file": "none",
+    "pathspec-file-nul": "none",
+    "no-pathspec-file-nul": "none"
+   },
+   "short": {
+    "2": {
+     "takes": "none",
+     "name": "ours"
+    },
+    "3": {
+     "takes": "none",
+     "name": "theirs"
+    },
+    "b": {
+     "takes": "next",
+     "name": null
+    },
+    "B": {
+     "takes": "next",
+     "name": null
+    },
+    "l": {
+     "takes": "none",
+     "name": null
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "m": {
+     "takes": "none",
+     "name": "merge"
+    },
+    "d": {
+     "takes": "none",
+     "name": "detach"
+    },
+    "t": {
+     "takes": "attached",
+     "name": "track"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "p": {
+     "takes": "none",
+     "name": "patch"
+    }
+   }
+  },
+  "checkout-index": {
+   "long": {
+    "all": "none",
+    "no-all": "none",
+    "ignore-skip-worktree-bits": "none",
+    "no-ignore-skip-worktree-bits": "none",
+    "force": "none",
+    "no-force": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "no-create": "none",
+    "create": "none",
+    "index": "none",
+    "no-index": "none",
+    "stdin": "none",
+    "no-stdin": "none",
+    "temp": "none",
+    "no-temp": "none",
+    "prefix": "next",
+    "no-prefix": "none",
+    "stage": "next"
+   },
+   "short": {
+    "a": {
+     "takes": "none",
+     "name": "all"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "n": {
+     "takes": "none",
+     "name": "no-create"
+    },
+    "u": {
+     "takes": "none",
+     "name": "index"
+    },
+    "z": {
+     "takes": "none",
+     "name": null
+    }
+   }
+  },
+  "switch": {
+   "long": {
+    "create": "next",
+    "no-create": "none",
+    "force-create": "next",
+    "no-force-create": "none",
+    "guess": "none",
+    "no-guess": "none",
+    "discard-changes": "none",
+    "no-discard-changes": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "recurse-submodules": "attached",
+    "no-recurse-submodules": "none",
+    "progress": "none",
+    "no-progress": "none",
+    "merge": "none",
+    "no-merge": "none",
+    "conflict": "next",
+    "no-conflict": "none",
+    "detach": "none",
+    "no-detach": "none",
+    "track": "attached",
+    "no-track": "none",
+    "force": "none",
+    "no-force": "none",
+    "orphan": "next",
+    "no-orphan": "none",
+    "overwrite-ignore": "none",
+    "no-overwrite-ignore": "none",
+    "ignore-other-worktrees": "none",
+    "no-ignore-other-worktrees": "none"
+   },
+   "short": {
+    "c": {
+     "takes": "next",
+     "name": "create"
+    },
+    "C": {
+     "takes": "next",
+     "name": "force-create"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "m": {
+     "takes": "none",
+     "name": "merge"
+    },
+    "d": {
+     "takes": "none",
+     "name": "detach"
+    },
+    "t": {
+     "takes": "attached",
+     "name": "track"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    }
+   }
+  },
+  "rm": {
+   "long": {
+    "dry-run": "none",
+    "no-dry-run": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "cached": "none",
+    "no-cached": "none",
+    "force": "none",
+    "no-force": "none",
+    "ignore-unmatch": "none",
+    "no-ignore-unmatch": "none",
+    "sparse": "none",
+    "no-sparse": "none",
+    "pathspec-from-file": "next",
+    "no-pathspec-from-file": "none",
+    "pathspec-file-nul": "none",
+    "no-pathspec-file-nul": "none"
+   },
+   "short": {
+    "n": {
+     "takes": "none",
+     "name": "dry-run"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "r": {
+     "takes": "none",
+     "name": null
+    }
+   }
+  },
+  "revert": {
+   "long": {
+    "quit": "none",
+    "continue": "none",
+    "abort": "none",
+    "skip": "none",
+    "cleanup": "next",
+    "no-cleanup": "none",
+    "no-commit": "none",
+    "commit": "none",
+    "edit": "none",
+    "no-edit": "none",
+    "signoff": "none",
+    "no-signoff": "none",
+    "mainline": "next",
+    "no-mainline": "none",
+    "rerere-autoupdate": "none",
+    "no-rerere-autoupdate": "none",
+    "strategy": "next",
+    "no-strategy": "none",
+    "strategy-option": "next",
+    "no-strategy-option": "none",
+    "gpg-sign": "attached",
+    "no-gpg-sign": "none",
+    "reference": "none",
+    "no-reference": "none"
+   },
+   "short": {
+    "n": {
+     "takes": "none",
+     "name": "no-commit"
+    },
+    "e": {
+     "takes": "none",
+     "name": "edit"
+    },
+    "s": {
+     "takes": "none",
+     "name": "signoff"
+    },
+    "m": {
+     "takes": "next",
+     "name": "mainline"
+    },
+    "X": {
+     "takes": "next",
+     "name": "strategy-option"
+    },
+    "S": {
+     "takes": "attached",
+     "name": "gpg-sign"
+    }
+   }
+  },
+  "branch": {
+   "long": {
+    "verbose": "none",
+    "no-verbose": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "track": "attached",
+    "no-track": "none",
+    "set-upstream-to": "next",
+    "no-set-upstream-to": "none",
+    "unset-upstream": "none",
+    "no-unset-upstream": "none",
+    "color": "attached",
+    "no-color": "none",
+    "remotes": "none",
+    "contains": "last",
+    "no-contains": "last",
+    "abbrev": "attached",
+    "no-abbrev": "none",
+    "all": "none",
+    "delete": "none",
+    "no-delete": "none",
+    "move": "none",
+    "no-move": "none",
+    "omit-empty": "none",
+    "no-omit-empty": "none",
+    "copy": "none",
+    "no-copy": "none",
+    "list": "none",
+    "no-list": "none",
+    "show-current": "none",
+    "no-show-current": "none",
+    "create-reflog": "none",
+    "no-create-reflog": "none",
+    "edit-description": "none",
+    "no-edit-description": "none",
+    "force": "none",
+    "no-force": "none",
+    "merged": "last",
+    "no-merged": "last",
+    "column": "attached",
+    "no-column": "none",
+    "sort": "next",
+    "no-sort": "none",
+    "points-at": "next",
+    "no-points-at": "none",
+    "ignore-case": "none",
+    "no-ignore-case": "none",
+    "recurse-submodules": "none",
+    "no-recurse-submodules": "none",
+    "format": "next",
+    "no-format": "none"
+   },
+   "short": {
+    "v": {
+     "takes": "none",
+     "name": "verbose"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "t": {
+     "takes": "attached",
+     "name": "track"
+    },
+    "u": {
+     "takes": "next",
+     "name": "set-upstream-to"
+    },
+    "r": {
+     "takes": "none",
+     "name": "remotes"
+    },
+    "a": {
+     "takes": "none",
+     "name": "all"
+    },
+    "d": {
+     "takes": "none",
+     "name": "delete"
+    },
+    "D": {
+     "takes": "none",
+     "name": null
+    },
+    "m": {
+     "takes": "none",
+     "name": "move"
+    },
+    "M": {
+     "takes": "none",
+     "name": null
+    },
+    "c": {
+     "takes": "none",
+     "name": "copy"
+    },
+    "C": {
+     "takes": "none",
+     "name": null
+    },
+    "l": {
+     "takes": "none",
+     "name": "list"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "i": {
+     "takes": "none",
+     "name": "ignore-case"
+    }
+   }
+  },
+  "worktree add": {
+   "long": {
+    "force": "none",
+    "no-force": "none",
+    "orphan": "none",
+    "no-orphan": "none",
+    "detach": "none",
+    "no-detach": "none",
+    "checkout": "none",
+    "no-checkout": "none",
+    "lock": "none",
+    "no-lock": "none",
+    "reason": "next",
+    "no-reason": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "track": "none",
+    "no-track": "none",
+    "guess-remote": "none",
+    "no-guess-remote": "none"
+   },
+   "short": {
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "b": {
+     "takes": "next",
+     "name": null
+    },
+    "B": {
+     "takes": "next",
+     "name": null
+    },
+    "d": {
+     "takes": "none",
+     "name": "detach"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    }
+   }
+  },
+  "pull": {
+   "long": {
+    "verbose": "none",
+    "no-verbose": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "progress": "none",
+    "no-progress": "none",
+    "recurse-submodules": "attached",
+    "no-recurse-submodules": "none",
+    "rebase": "attached",
+    "no-rebase": "none",
+    "stat": "none",
+    "no-stat": "none",
+    "log": "attached",
+    "no-log": "none",
+    "signoff": "attached",
+    "no-signoff": "none",
+    "squash": "none",
+    "no-squash": "none",
+    "commit": "none",
+    "no-commit": "none",
+    "edit": "none",
+    "no-edit": "none",
+    "cleanup": "next",
+    "no-cleanup": "none",
+    "ff": "none",
+    "no-ff": "none",
+    "ff-only": "none",
+    "verify": "none",
+    "no-verify": "none",
+    "verify-signatures": "none",
+    "no-verify-signatures": "none",
+    "autostash": "none",
+    "no-autostash": "none",
+    "strategy": "next",
+    "no-strategy": "none",
+    "strategy-option": "next",
+    "no-strategy-option": "none",
+    "gpg-sign": "attached",
+    "no-gpg-sign": "none",
+    "allow-unrelated-histories": "none",
+    "no-allow-unrelated-histories": "none",
+    "all": "none",
+    "no-all": "none",
+    "append": "none",
+    "no-append": "none",
+    "upload-pack": "next",
+    "no-upload-pack": "none",
+    "force": "none",
+    "no-force": "none",
+    "tags": "none",
+    "no-tags": "none",
+    "prune": "none",
+    "no-prune": "none",
+    "jobs": "attached",
+    "no-jobs": "none",
+    "dry-run": "none",
+    "no-dry-run": "none",
+    "keep": "none",
+    "no-keep": "none",
+    "depth": "next",
+    "no-depth": "none",
+    "shallow-since": "next",
+    "no-shallow-since": "none",
+    "shallow-exclude": "next",
+    "no-shallow-exclude": "none",
+    "deepen": "next",
+    "no-deepen": "none",
+    "unshallow": "none",
+    "update-shallow": "none",
+    "no-update-shallow": "none",
+    "refmap": "next",
+    "server-option": "next",
+    "no-server-option": "none",
+    "ipv4": "none",
+    "no-ipv4": "none",
+    "ipv6": "none",
+    "no-ipv6": "none",
+    "negotiation-tip": "next",
+    "no-negotiation-tip": "none",
+    "show-forced-updates": "none",
+    "no-show-forced-updates": "none",
+    "set-upstream": "none",
+    "no-set-upstream": "none"
+   },
+   "short": {
+    "4": {
+     "takes": "none",
+     "name": "ipv4"
+    },
+    "6": {
+     "takes": "none",
+     "name": "ipv6"
+    },
+    "v": {
+     "takes": "none",
+     "name": "verbose"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "r": {
+     "takes": "attached",
+     "name": "rebase"
+    },
+    "n": {
+     "takes": "none",
+     "name": null
+    },
+    "s": {
+     "takes": "next",
+     "name": "strategy"
+    },
+    "X": {
+     "takes": "next",
+     "name": "strategy-option"
+    },
+    "S": {
+     "takes": "attached",
+     "name": "gpg-sign"
+    },
+    "a": {
+     "takes": "none",
+     "name": "append"
+    },
+    "f": {
+     "takes": "none",
+     "name": "force"
+    },
+    "t": {
+     "takes": "none",
+     "name": "tags"
+    },
+    "p": {
+     "takes": "none",
+     "name": "prune"
+    },
+    "j": {
+     "takes": "attached",
+     "name": "jobs"
+    },
+    "k": {
+     "takes": "none",
+     "name": "keep"
+    },
+    "o": {
+     "takes": "next",
+     "name": "server-option"
+    }
+   }
+  },
+  "rebase": {
+   "long": {
+    "onto": "next",
+    "no-onto": "none",
+    "keep-base": "none",
+    "no-keep-base": "none",
+    "no-verify": "none",
+    "verify": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "verbose": "none",
+    "no-verbose": "none",
+    "no-stat": "none",
+    "stat": "none",
+    "signoff": "none",
+    "no-signoff": "none",
+    "committer-date-is-author-date": "none",
+    "no-committer-date-is-author-date": "none",
+    "reset-author-date": "none",
+    "no-reset-author-date": "none",
+    "ignore-whitespace": "none",
+    "no-ignore-whitespace": "none",
+    "whitespace": "next",
+    "no-whitespace": "none",
+    "force-rebase": "none",
+    "no-force-rebase": "none",
+    "no-ff": "none",
+    "ff": "none",
+    "continue": "none",
+    "skip": "none",
+    "abort": "none",
+    "quit": "none",
+    "edit-todo": "none",
+    "show-current-patch": "none",
+    "apply": "none",
+    "merge": "none",
+    "interactive": "none",
+    "rerere-autoupdate": "none",
+    "no-rerere-autoupdate": "none",
+    "empty": "next",
+    "autosquash": "none",
+    "no-autosquash": "none",
+    "update-refs": "none",
+    "no-update-refs": "none",
+    "gpg-sign": "attached",
+    "no-gpg-sign": "none",
+    "autostash": "none",
+    "no-autostash": "none",
+    "exec": "next",
+    "no-exec": "none",
+    "rebase-merges": "attached",
+    "no-rebase-merges": "none",
+    "fork-point": "none",
+    "no-fork-point": "none",
+    "strategy": "next",
+    "no-strategy": "none",
+    "strategy-option": "next",
+    "no-strategy-option": "none",
+    "root": "none",
+    "no-root": "none",
+    "reschedule-failed-exec": "none",
+    "no-reschedule-failed-exec": "none",
+    "reapply-cherry-picks": "none",
+    "no-reapply-cherry-picks": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "v": {
+     "takes": "none",
+     "name": "verbose"
+    },
+    "n": {
+     "takes": "none",
+     "name": "no-stat"
+    },
+    "C": {
+     "takes": "next",
+     "name": null
+    },
+    "f": {
+     "takes": "none",
+     "name": "force-rebase"
+    },
+    "m": {
+     "takes": "none",
+     "name": "merge"
+    },
+    "i": {
+     "takes": "none",
+     "name": "interactive"
+    },
+    "S": {
+     "takes": "attached",
+     "name": "gpg-sign"
+    },
+    "x": {
+     "takes": "next",
+     "name": "exec"
+    },
+    "r": {
+     "takes": "attached",
+     "name": "rebase-merges"
+    },
+    "s": {
+     "takes": "next",
+     "name": "strategy"
+    },
+    "X": {
+     "takes": "next",
+     "name": "strategy-option"
+    }
+   }
+  },
+  "merge": {
+   "long": {
+    "stat": "none",
+    "no-stat": "none",
+    "summary": "none",
+    "no-summary": "none",
+    "log": "attached",
+    "no-log": "none",
+    "squash": "none",
+    "no-squash": "none",
+    "commit": "none",
+    "no-commit": "none",
+    "edit": "none",
+    "no-edit": "none",
+    "cleanup": "next",
+    "no-cleanup": "none",
+    "ff": "none",
+    "no-ff": "none",
+    "ff-only": "none",
+    "rerere-autoupdate": "none",
+    "no-rerere-autoupdate": "none",
+    "verify-signatures": "none",
+    "no-verify-signatures": "none",
+    "strategy": "next",
+    "no-strategy": "none",
+    "strategy-option": "next",
+    "no-strategy-option": "none",
+    "message": "next",
+    "no-message": "none",
+    "file": "next",
+    "into-name": "next",
+    "no-into-name": "none",
+    "verbose": "none",
+    "no-verbose": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "abort": "none",
+    "no-abort": "none",
+    "quit": "none",
+    "no-quit": "none",
+    "continue": "none",
+    "no-continue": "none",
+    "allow-unrelated-histories": "none",
+    "no-allow-unrelated-histories": "none",
+    "progress": "none",
+    "no-progress": "none",
+    "gpg-sign": "attached",
+    "no-gpg-sign": "none",
+    "autostash": "none",
+    "no-autostash": "none",
+    "overwrite-ignore": "none",
+    "no-overwrite-ignore": "none",
+    "signoff": "none",
+    "no-signoff": "none",
+    "no-verify": "none",
+    "verify": "none"
+   },
+   "short": {
+    "n": {
+     "takes": "none",
+     "name": null
+    },
+    "e": {
+     "takes": "none",
+     "name": "edit"
+    },
+    "s": {
+     "takes": "next",
+     "name": "strategy"
+    },
+    "X": {
+     "takes": "next",
+     "name": "strategy-option"
+    },
+    "m": {
+     "takes": "next",
+     "name": "message"
+    },
+    "F": {
+     "takes": "next",
+     "name": "file"
+    },
+    "v": {
+     "takes": "none",
+     "name": "verbose"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "S": {
+     "takes": "attached",
+     "name": "gpg-sign"
+    }
+   }
+  },
+  "clone": {
+   "long": {
+    "verbose": "none",
+    "no-verbose": "none",
+    "quiet": "none",
+    "no-quiet": "none",
+    "progress": "none",
+    "no-progress": "none",
+    "reject-shallow": "none",
+    "no-reject-shallow": "none",
+    "no-checkout": "none",
+    "checkout": "none",
+    "bare": "none",
+    "no-bare": "none",
+    "mirror": "none",
+    "no-mirror": "none",
+    "local": "none",
+    "no-local": "none",
+    "no-hardlinks": "none",
+    "hardlinks": "none",
+    "shared": "none",
+    "no-shared": "none",
+    "recurse-submodules": "attached",
+    "no-recurse-submodules": "none",
+    "recursive": "attached",
+    "no-recursive": "none",
+    "jobs": "next",
+    "no-jobs": "none",
+    "template": "next",
+    "no-template": "none",
+    "reference": "next",
+    "no-reference": "none",
+    "reference-if-able": "next",
+    "no-reference-if-able": "none",
+    "dissociate": "none",
+    "no-dissociate": "none",
+    "origin": "next",
+    "no-origin": "none",
+    "branch": "next",
+    "no-branch": "none",
+    "upload-pack": "next",
+    "no-upload-pack": "none",
+    "depth": "next",
+    "no-depth": "none",
+    "shallow-since": "next",
+    "no-shallow-since": "none",
+    "shallow-exclude": "next",
+    "no-shallow-exclude": "none",
+    "single-branch": "none",
+    "no-single-branch": "none",
+    "no-tags": "none",
+    "tags": "none",
+    "shallow-submodules": "none",
+    "no-shallow-submodules": "none",
+    "separate-git-dir": "next",
+    "no-separate-git-dir": "none",
+    "ref-format": "next",
+    "no-ref-format": "none",
+    "config": "next",
+    "no-config": "none",
+    "server-option": "next",
+    "no-server-option": "none",
+    "ipv4": "none",
+    "ipv6": "none",
+    "filter": "next",
+    "no-filter": "none",
+    "also-filter-submodules": "none",
+    "no-also-filter-submodules": "none",
+    "remote-submodules": "none",
+    "no-remote-submodules": "none",
+    "sparse": "none",
+    "no-sparse": "none",
+    "bundle-uri": "next",
+    "no-bundle-uri": "none"
+   },
+   "short": {
+    "4": {
+     "takes": "none",
+     "name": "ipv4"
+    },
+    "6": {
+     "takes": "none",
+     "name": "ipv6"
+    },
+    "v": {
+     "takes": "none",
+     "name": "verbose"
+    },
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "n": {
+     "takes": "none",
+     "name": "no-checkout"
+    },
+    "l": {
+     "takes": "none",
+     "name": "local"
+    },
+    "s": {
+     "takes": "none",
+     "name": "shared"
+    },
+    "j": {
+     "takes": "next",
+     "name": "jobs"
+    },
+    "o": {
+     "takes": "next",
+     "name": "origin"
+    },
+    "b": {
+     "takes": "next",
+     "name": "branch"
+    },
+    "u": {
+     "takes": "next",
+     "name": "upload-pack"
+    },
+    "c": {
+     "takes": "next",
+     "name": "config"
+    }
+   }
+  },
+  "init": {
+   "long": {
+    "template": "next",
+    "no-template": "none",
+    "bare": "none",
+    "no-bare": "none",
+    "shared": "attached",
+    "quiet": "none",
+    "no-quiet": "none",
+    "separate-git-dir": "next",
+    "no-separate-git-dir": "none",
+    "initial-branch": "next",
+    "no-initial-branch": "none",
+    "object-format": "next",
+    "no-object-format": "none",
+    "ref-format": "next",
+    "no-ref-format": "none"
+   },
+   "short": {
+    "q": {
+     "takes": "none",
+     "name": "quiet"
+    },
+    "b": {
+     "takes": "next",
+     "name": "initial-branch"
+    }
+   }
+  }
+ }
+}
