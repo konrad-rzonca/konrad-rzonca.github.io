@@ -1,5 +1,5 @@
 /* One stylesheet for both sites. The colors and the title's face are the brand's: brand/brand.css
-   and brand/title.ttf, which sunforge-brand's build writes. */
+   and brand/title.ttf. */
 @font-face { font-family: "Brand Title"; src: url("brand/title.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
 :root {
   --bg: var(--brand-wall);
