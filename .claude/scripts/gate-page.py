@@ -13,7 +13,8 @@ by writing a manifest beside its evidence. The manifest's keys:
   tables       optional: measurements every decision shares, shown after the intro. Each has a
                caption, a header (a list of column names) and rows (lists of cells).
   references   optional: frames that are not options, shown after the tables, such as the mock of
-               a look that left the page, each a caption and a file relative to the manifest.
+               a look that left the page, each a caption, a file relative to the manifest, and
+               optionally a width, the CSS pixels across it is shown at, as a shot's.
   decisions    the decisions in the order they are read. Each has an id, a name, its options (id,
                name, and optionally a tooltip shown over the option's button), its shots (id and
                name), and its axes: the decisions whose picks select its frame, its own among
@@ -74,7 +75,8 @@ by writing a manifest beside its evidence. The manifest's keys:
 By default the page is one dark self-contained file with every frame embedded, on disk and
 published nowhere. A browser cannot open a page of some hundreds of megabytes, so --linked writes one that loads each
 frame from beside the manifest instead and ignores bases: the page then works only next to its
-frames.
+frames. Open it by its file path. Python's http.server serves no byte ranges, so a page it
+serves cannot seek its videos.
 Picks are page-wide: one stage per decision that has its own, option buttons above the image and
 one button per shot below it, then the shot's sliders, each slider with a button that plays through
 its stops. A video holds still on one frame. The scrubber under it, its Previous frame and Next frame
@@ -791,6 +793,8 @@ def check(manifest, root):
             raise SystemExit(f"{r['file']}: no such reference beside the manifest.")
         if is_video(r['file']):
             raise SystemExit(f"{r['file']}: a reference is a picture. A video is a frame of a decision.")
+        if 'width' in r and (type(r['width']) is not int or r['width'] < 1):
+            raise SystemExit(f"{r['file']}: a reference's width is a whole number of pixels from 1.")
     for f in manifest['frames']:
         d = decisions.get(f['decision'])
         if d is None:
@@ -992,8 +996,9 @@ def build(manifest_path, output_path, linked=False):
             else:
                 data = base64.b64encode((root / r['file']).read_bytes()).decode('ascii')
                 source = f"data:image/{r['file'].split('.')[-1]};base64,{data}"
+            width = f" style=\"width: {r['width']}px\"" if 'width' in r else ''
             parts.append(
-                f"<div class=\"stage\"><img alt=\"\" src=\"{e(source)}\"></div>"
+                f"<div class=\"stage\"><img alt=\"\" src=\"{e(source)}\"{width}></div>"
                 f"<div class=\"caption\">{e(r['caption'])}</div>")
 
     def buttons(decision, options):

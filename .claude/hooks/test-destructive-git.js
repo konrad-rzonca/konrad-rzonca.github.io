@@ -61,9 +61,15 @@ const check = (expected, label, payload, hookPath = hook, reason = '') => {
 };
 
 // Runs `cases` against a copy of the hook beside every file it requires, with `files` written over
-// the copies: a string replaces a file's content and null deletes it.
-function withCopy(label, files, cases) {
-  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'hooktest-'));
+// the copies: a string replaces a file's content and null deletes it. With `projectPackage`, the copy
+// sits in `.claude/hooks` under a project root holding that package.json text.
+function withCopy(label, files, cases, projectPackage) {
+  const top = fs.mkdtempSync(path.join(os.tmpdir(), 'hooktest-'));
+  const directory = projectPackage === undefined ? top : path.join(top, '.claude', 'hooks');
+  if (projectPackage !== undefined) {
+    fs.mkdirSync(directory, { recursive: true });
+    fs.writeFileSync(path.join(top, 'package.json'), projectPackage);
+  }
   for (const name of fs.readdirSync(__dirname)) {
     if (!name.startsWith('test-') && fs.statSync(path.join(__dirname, name)).isFile()) {
       fs.copyFileSync(path.join(__dirname, name), path.join(directory, name));
@@ -78,7 +84,7 @@ function withCopy(label, files, cases) {
       check(expected, `${label}: ${caseLabel}`, payload, path.join(directory, path.basename(hook)), reason);
     }
   } finally {
-    fs.rmSync(directory, { recursive: true, force: true });
+    fs.rmSync(top, { recursive: true, force: true });
   }
 }
 
@@ -793,6 +799,8 @@ function finishChecks() {
   ]) {
     withCopy(label, files, [['notice', 'a refused command', denyCommand, 'ran unchecked']]);
   }
+  // Node loads a .js file as an ES module under a "type": "module" package, where the hooks crash.
+  withCopy('a project whose package.json sets "type": "module"', {}, [['deny', 'a refused command', denyCommand]], '{ "type": "module" }\n');
 
   fs.rmSync(root, { recursive: true, force: true });
   if (failures !== 0) {
